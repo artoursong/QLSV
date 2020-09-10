@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Sv.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý sinh viên</h1>
+        <form id="sinh-vien-form">
+            <div class="row">
+                <label for="ma-sinh-vien" class="label">Mã sinh viên</label>
+                <input placeholder="Vd: 12345" id="ma-sinh-vien" type="text" class="validate" required>
+            </div>
+            <div class="row">
+                <label for="ho-va-ten" class="label">Họ và tên</label>
+                <input placeholder="Vd: Nguyễn Văn A" id="ho-va-ten" type="text" class="validate" required>
+            </div>
+            <div class="row">
+                <label for="email" class="label">Email</label>
+                <input id="email" type="email" class="validate" required>
+            </div>
+            <button class="btn btn-primary" class="btn btn-success" type="submit" id='submit'>Submit
+              </button>
+              
+        </form>
+    <div id = "DELETE">
+        <button class="btn btn-success" id= "save">Save</button>
+        <button class="btn btn-danger" id= "DELETE" >DELETE</button>
+    </div>
+    <div id = "show">
+
+    </div>   
+</body>
+</html>
