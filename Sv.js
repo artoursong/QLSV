@@ -48,12 +48,13 @@ window.onload = function() {
     btsave.style.display = "none";
     var btsubmit = document.getElementById("submit");
     btsubmit.style.display = "inline-block";
-    var btsubmit = document.getElementById("submit");
+    
     var btedit = document.getElementById("save");
     btedit.onclick = function(e) 
     {
         edit(Vi_tri);
     }
+    var btsubmit = document.getElementById("submit");
     btsubmit.onclick = function(e) 
     {
         var msv = document.getElementById("ma-sinh-vien").value;
@@ -62,30 +63,32 @@ window.onload = function() {
         s = new SinhVien(msv, hovaten, email);
         ListSv.push(s);
         document.getElementById("show").innerHTML += "<input type='checkbox' name = 'delete'>" + s.msv + " " + s.hovaten +  " " + s.email + "<button class = 'edit' onclick = 'SuaSinhVien(" + (ListSv.length-1) + ")'>EDIT</button>" + "<br/>";
-        var btdelete = document.getElementById("DELETE");
-        btdelete.onclick = function()
-        {
-            var checkbox = [];
-            var deletebox = [];
-            var count = 0;
-            checkbox = document.getElementsByName("delete");
-            for (i = 0; i < checkbox.length; i++) 
-            {
-                if (checkbox[i].checked == true) 
-                {
-                    deletebox[count] = i - count;
-                    count++;
-                }
-            }
-            for (i = 0; i < deletebox.length; i++) 
-            {
-                ListSv.splice(deletebox[i],1);
-            }
-            capnhat();
-        }
+        
         e.preventDefault();
     }
     
+    var btdelete = document.getElementById("DELETE");
+    btdelete.onclick = function()
+    {
+        var checkbox = [];
+        var deletebox = [];
+        var count = 0;
+        checkbox = document.getElementsByName("delete");
+        for (i = 0; i < checkbox.length; i++) 
+        {
+            if (checkbox[i].checked == true) 
+            {
+                deletebox[count] = i - count;
+                count++;
+            }
+        }
+        for (i = 0; i < deletebox.length; i++) 
+        {
+            ListSv.splice(deletebox[i],1);
+        }
+        capnhat();
+    }
+
     show();
     
     console.log(ListSv);
